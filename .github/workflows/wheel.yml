@@ -37,6 +37,11 @@ jobs:
         uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf # v3.2.0
         with:
           platforms: arm64
+          # This should be temporary
+          # see: https://github.com/pypa/cibuildwheel/discussions/2256
+          # xref https://github.com/docker/setup-qemu-action/issues/188
+          # xref https://github.com/tonistiigi/binfmt/issues/215
+          image: tonistiigi/binfmt:qemu-v8.1.5
 
       - name: Build for Windows
         if: runner.os == 'Windows'
@@ -66,7 +71,7 @@ jobs:
         working-directory: ${{github.workspace}}/python
         run: python -m cibuildwheel --output-dir wheelhouse
         env:
-          CIBW_ARCHS_LINUX: auto
+          CIBW_ARCHS_LINUX: auto aarch64
           CIBW_ARCHS_MACOS: x86_64 universal2 arm64
           CIBW_ARCHS_WINDOWS: auto ARM64
           CIBW_SKIP: "pp* *-musllinux_* *cp36-* *cp37-* *cp38-*"
