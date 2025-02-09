@@ -74,7 +74,7 @@ jobs:
           CIBW_ARCHS_LINUX: auto aarch64
           CIBW_ARCHS_MACOS: x86_64 universal2 arm64
           CIBW_ARCHS_WINDOWS: auto ARM64
-          CIBW_SKIP: "pp* *-musllinux_* *cp36-* *cp37-* *cp38-*"
+          CIBW_SKIP: "pp* *-musllinux_*"
           CIBW_BUILD_VERBOSITY: 1
 
       - name: Build sdist archive
