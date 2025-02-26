@@ -15,7 +15,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ ubuntu-latest, ubuntu-20.04, windows-latest, macOS-11 ]
+        os: [ ubuntu-latest, ubuntu-20.04, windows-latest, macOS-latest ]
         arch: [ x64 ]
         include:
           - os: windows-latest
@@ -70,7 +70,7 @@ jobs:
       uses: tj-actions/glob@2944188f585a0ec102a6a82d9eeb3aed69785393 # v22.0.1
       id: wheel
       with:
-        files: ./python/dist/sentencepiece-*.whl
+        files: ./python/dist/dbowring_sentencepiece-*.whl
 
     - name: Install Python Wrapper
       run: python3 -m pip install "${{ steps.wheel.outputs.paths }}"

@@ -19,7 +19,7 @@ jobs:
       digests-windows: ${{ steps.hash-windows.outputs.digests }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-11]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
     runs-on: ${{ matrix.os }}
     name: Build wheels on ${{ matrix.os }}
 
@@ -109,7 +109,7 @@ jobs:
           prerelease: true
           file_glob: true
 
-      - name: Generate SLSA subjects - Macos
+      - name: Generate SLSA subjects - MacOS
         id: hash-macos
         if: runner.os == 'macOS'
         run: echo "digests=$(shasum -a 256 ./python/wheelhouse/* | base64)" >> $GITHUB_OUTPUT
