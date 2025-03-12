@@ -184,15 +184,15 @@ else:
   cmdclass = {'build_ext': build_ext}
 
 setup(
-    name='sentencepiece',
+    name='dbowring-sentencepiece',
     author='Taku Kudo',
     author_email='taku@google.com',
     description='SentencePiece python wrapper',
     long_description=long_description(),
     long_description_content_type='text/markdown',
-    version=__version__,
+    version=__version__ + ".post0",
     package_dir={'': 'src'},
-    url='https://github.com/google/sentencepiece',
+    url='https://github.com/dbowring/sentencepiece',
     license='Apache',
     platforms='Unix',
     py_modules=[

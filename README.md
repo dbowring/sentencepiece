@@ -9,6 +9,13 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 [![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
 
+## WARNING
+
+This is not an official build. This is an unofficial fork to add python3.13 builds pending [google/sentencepiece#1084](https://github.com/google/sentencepiece/pull/1084).
+The official source can be found on github at [google/sentencepiece](https://github.com/google/sentencepiece), and the official build can be found on PyPI at [sentencepiece](https://pypi.org/project/sentencepiece/).
+
+## Overview
+
 SentencePiece is an unsupervised text tokenizer and detokenizer mainly for
 Neural Network-based text generation systems where the vocabulary size
 is predetermined prior to the neural model training. SentencePiece implements
